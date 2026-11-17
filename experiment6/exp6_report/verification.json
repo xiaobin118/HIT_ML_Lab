@@ -1,0 +1,206 @@
+{
+  "checks": [
+    {
+      "name": "数据张量形状",
+      "passed": true,
+      "value": [
+        17029,
+        3,
+        64,
+        64
+      ],
+      "expected": "(17029, 3, 64, 64)",
+      "detail": ""
+    },
+    {
+      "name": "数据 dtype/范围",
+      "passed": true,
+      "value": "torch.uint8",
+      "expected": "uint8（0~255）",
+      "detail": ""
+    },
+    {
+      "name": "训练集/参考集不重叠",
+      "passed": true,
+      "value": 0,
+      "expected": "0",
+      "detail": ""
+    },
+    {
+      "name": "去重统计",
+      "passed": true,
+      "value": {
+        "n_raw": 21551,
+        "n_unique": 17029,
+        "n_duplicate": 4522,
+        "duplicate_ratio": 0.2098
+      },
+      "expected": "重复率约 21%",
+      "detail": ""
+    },
+    {
+      "name": "图片值域",
+      "passed": true,
+      "value": [
+        0.0,
+        1.0
+      ],
+      "expected": "[0, 1]",
+      "detail": ""
+    },
+    {
+      "name": "生成器输出形状",
+      "passed": true,
+      "value": [
+        8,
+        3,
+        64,
+        64
+      ],
+      "expected": "(8, 3, 64, 64)",
+      "detail": ""
+    },
+    {
+      "name": "生成器输出范围",
+      "passed": true,
+      "value": [
+        -0.83,
+        0.82
+      ],
+      "expected": "[-1, 1]（tanh）",
+      "detail": ""
+    },
+    {
+      "name": "判别器输出形状",
+      "passed": true,
+      "value": [
+        8
+      ],
+      "expected": "(8,) logits",
+      "detail": ""
+    },
+    {
+      "name": "VAE 重建形状",
+      "passed": true,
+      "value": [
+        8,
+        3,
+        64,
+        64
+      ],
+      "expected": "(8, 3, 64, 64)",
+      "detail": ""
+    },
+    {
+      "name": "VAE μ/logσ² 形状",
+      "passed": true,
+      "value": [
+        [
+          8,
+          128
+        ],
+        [
+          8,
+          128
+        ]
+      ],
+      "expected": "(8, 128)",
+      "detail": ""
+    },
+    {
+      "name": "VAE 重建值域",
+      "passed": true,
+      "value": [
+        0.011,
+        0.994
+      ],
+      "expected": "[0, 1]（sigmoid）",
+      "detail": ""
+    },
+    {
+      "name": "参数量",
+      "passed": true,
+      "value": {
+        "G": 3576707,
+        "D": 2765633,
+        "VAE": 8669443
+      },
+      "expected": "三者均 > 1e6，与结构匹配",
+      "detail": ""
+    },
+    {
+      "name": "生成器梯度非零",
+      "passed": true,
+      "value": "14/14",
+      "expected": "全部参数都有非零梯度",
+      "detail": ""
+    },
+    {
+      "name": "判别器单 batch 过拟合",
+      "passed": true,
+      "value": {
+        "初始": 0.4523,
+        "150 步后": 1.0
+      },
+      "expected": "> 0.95（能学会区分固定真/假样本）",
+      "detail": ""
+    },
+    {
+      "name": "VAE 单 batch 过拟合",
+      "passed": true,
+      "value": {
+        "初始重建损失": 1584.69,
+        "200 步后": 166.26,
+        "剩余比例": 0.1049
+      },
+      "expected": "重建损失下降超过一半",
+      "detail": ""
+    },
+    {
+      "name": "FID 合理性",
+      "passed": true,
+      "value": {
+        "真实图(512张)": 17.11,
+        "均匀噪声": 319.22,
+        "未训练生成器": 398.21
+      },
+      "expected": "真实图 < 60，噪声/未训练 > 100",
+      "detail": ""
+    },
+    {
+      "name": "潜空间插值平滑",
+      "passed": true,
+      "value": {
+        "相邻帧平均差": 0.0002,
+        "最大帧间差": 0.0002
+      },
+      "expected": "相邻帧有变化但差异小于 0.5",
+      "detail": ""
+    },
+    {
+      "name": "最近邻距离指标",
+      "passed": true,
+      "value": {
+        "未训练生成器": 20.59,
+        "真实留出图": 27.12
+      },
+      "expected": "均为正且量级合理",
+      "detail": ""
+    }
+  ],
+  "n_passed": 18,
+  "n_total": 18,
+  "runtime_s": 49.85,
+  "device": "cuda",
+  "params": {
+    "G": 3576707,
+    "D": 2765633,
+    "VAE": 8669443
+  },
+  "fid_sanity": {
+    "real_512": 17.113,
+    "uniform_noise": 319.217,
+    "untrained_generator": 398.212
+  },
+  "timestamp": "2026-10-22 12:59:37"
+}

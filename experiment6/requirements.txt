@@ -1,0 +1,15 @@
+# 实验六运行环境依赖
+#
+# 本实验在 Linux（WSL2）+ NVIDIA RTX 4050 Laptop GPU 上完成，
+# PyTorch 为 CUDA 13.0 版本；没有 GPU 时脚本会自动退回 CPU（速度会慢很多）。
+#
+# 安装 GPU 版 PyTorch（CUDA 版本可按自己的驱动调整）：
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+#
+# 其余依赖：
+torch>=2.0
+torchvision>=0.15
+numpy>=1.24
+matplotlib>=3.7
+pillow>=10.0
+# 生成 docx 报告需要系统安装 pandoc（如 sudo apt install pandoc），不是 pip 包
