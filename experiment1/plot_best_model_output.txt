@@ -1,0 +1,5 @@
+saved: best_model.png
+train_mse = 0.046107
+test_mse  = 0.005886
+||w||     = 12.4246
+TIME 12.80 s

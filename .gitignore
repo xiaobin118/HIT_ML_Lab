@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# 构建产物与缓存
+build/
+_build/
+.cache/
+*.o
+*.obj
+CMakeCache.txt
+CMakeFiles/
+
+# 运行日志
+run_logs/
+*.log
+
+# 数据集（保留实验四 lab2_mlp 自带的 Ionosphere 小数据集）
+**/data/*
+!experiment4/lab2_mlp/data/ionosphere.data
+
+# 模型权重与大型中间结果（保留 lab2_mlp 的 13 KB 最优权重）
+*.pt
+*.pth
+*.npz
+*.zip
+!experiment4/lab2_mlp/results/model_best.pt
+
+# 生成的 Office 文档（仓库只保留 Markdown 报告）
+*.docx
+*.doc
+*.pdf
+*.pptx
+~$*
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
