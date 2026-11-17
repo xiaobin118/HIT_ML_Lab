@@ -1,0 +1,3 @@
+numpy>=2.0
+matplotlib>=3.8
+# 生成 docx 需要系统安装 pandoc

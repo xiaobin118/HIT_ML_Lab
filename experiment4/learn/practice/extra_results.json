@@ -1,0 +1,62 @@
+[
+ {
+  "name": "Fashion-MNIST",
+  "n_train": 20000,
+  "n_test": 5000,
+  "D": 784,
+  "C": 10,
+  "linear": 0.8294,
+  "mlp": 0.8606,
+  "gap": 0.0312
+ },
+ {
+  "name": "Pendigits",
+  "n_train": 7696,
+  "n_test": 3296,
+  "D": 16,
+  "C": 10,
+  "linear": 0.9284,
+  "mlp": 0.9942,
+  "gap": 0.0658
+ },
+ {
+  "name": "Optdigits",
+  "n_train": 3935,
+  "n_test": 1685,
+  "D": 64,
+  "C": 10,
+  "linear": 0.968,
+  "mlp": 0.981,
+  "gap": 0.0131
+ },
+ {
+  "name": "Letter",
+  "n_train": 14000,
+  "n_test": 6000,
+  "D": 16,
+  "C": 26,
+  "linear": 0.7583,
+  "mlp": 0.953,
+  "gap": 0.1947
+ },
+ {
+  "name": "Iris",
+  "n_train": 105,
+  "n_test": 45,
+  "D": 4,
+  "C": 3,
+  "linear": 0.9333,
+  "mlp": 0.9556,
+  "gap": 0.0222
+ },
+ {
+  "name": "WDBC",
+  "n_train": 398,
+  "n_test": 171,
+  "D": 30,
+  "C": 2,
+  "linear": 0.9825,
+  "mlp": 0.9649,
+  "gap": -0.0175
+ }
+]
