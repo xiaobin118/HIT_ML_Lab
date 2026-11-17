@@ -1,0 +1,14 @@
+# 实验五的 Python 依赖。
+#
+# 深度学习框架：PyTorch（需要 GPU 版）。官方 GPU wheel 的安装方式：
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+# 本实验实际使用的版本：torch 2.14.1+cu130 / torchvision 0.29.1+cu130（CUDA 13.0）
+# 没有 GPU 时用 CPU 版 torch 也能跑，只是训练会慢很多。
+torch>=2.7
+torchvision>=0.22
+
+numpy>=2.0
+matplotlib>=3.8
+
+# 生成 docx 报告需要系统安装 pandoc（非 Python 包）
+#   sudo apt install pandoc
